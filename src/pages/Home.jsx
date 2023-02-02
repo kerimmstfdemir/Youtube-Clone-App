@@ -1,6 +1,10 @@
+import Videos from "../components/Videos"
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+        <Videos />
+    </div>
   )
 }
 
