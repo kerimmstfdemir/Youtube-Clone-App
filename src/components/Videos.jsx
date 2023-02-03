@@ -1,29 +1,30 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Videos = () => {
-    const { videos } = useSelector((state) => state.videoSlice)
+    const { searchInput, videos } = useSelector((state) => state.videoSlice)
     console.log(videos)
     return (
-        <div className='flex flex-row justify-center flex-wrap gap-4'>
+        <div className='flex flex-row justify-center flex-wrap gap-4 mt-6'>
             {videos?.items?.map((item) => {
+                const { id, snippet:{title, description} } = item
                 return (
-                    <div>
+                    <>
                         <div className="flex justify-center">
-                            <div className="rounded-lg shadow-lg bg-white max-w-sm">
-                                <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-                                    <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt="" />
-                                </a>
+                            <div className="flex flex-col rounded-lg shadow-lg bg-white max-w-sm">
+                                
+                                <iframe height="250" src={`https://www.youtube.com/embed/${searchInput ? id?.videoId : id}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                               
                                 <div className="p-6">
-                                    <h5 className="text-gray-900 text-xl font-medium mb-2">Card title</h5>
-                                    <p className="text-gray-700 text-base mb-4">
-                                        Some quick example text to build on the card title and make up the bulk of the card's
-                                        content.
+                                    <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
+                                    <p className="text-gray-700 text-base text-justify overflow-hidden mb-4">
+                                        {description.slice(0,150)}...
                                     </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </>
                 )
             })}
         </div>
