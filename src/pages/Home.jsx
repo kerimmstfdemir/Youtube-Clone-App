@@ -4,11 +4,9 @@ import Videos from "../components/Videos"
 import youtubeApi from "../api/youtubeApi"
 import { getVideos } from "../redux/features/videoSlice"
 import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
 
 const Home = () => {
     const dispatch = useDispatch()
-    const { searchInput } = useSelector((state) => state.videoSlice)
 
     const getYoutubeVideos = async () => {
         try{
@@ -20,24 +18,9 @@ const Home = () => {
         }
     }
 
-    const getSearchedVideos = async () => {
-        try{
-            const { data } = await youtubeApi.get(`/search?q=${searchInput}`)
-            console.log(data);
-            dispatch(getVideos(data))
-        }catch(error){
-            console.log(error.message)
-        }
-    }
-
     useEffect(() => {
-
-        if(searchInput !== ""){
-            getSearchedVideos()
-        }else{
-            getYoutubeVideos()
-        }
-    }, [searchInput])
+        getYoutubeVideos()
+    }, [])
 
     return (
         <div>

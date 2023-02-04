@@ -15,7 +15,7 @@ const Videos = () => {
                             <div className="flex flex-col rounded-lg shadow-lg bg-white max-w-sm">
                                 
                                 <iframe height="250" src={`https://www.youtube.com/embed/${searchInput ? id?.videoId : id}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                               
+                            
                                 <div className="p-6">
                                     <h5 className="text-gray-900 text-xl font-medium mb-2">{title}</h5>
                                     <p className="text-gray-700 text-base text-justify overflow-hidden mb-4">

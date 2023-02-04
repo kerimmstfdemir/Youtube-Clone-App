@@ -7,7 +7,7 @@ const Footer = () => {
             © {new Date().getFullYear()} Copyright 
           </p> 
             <p>
-            Developed by{" "}
+            Developed by {" "}
             <a
               target="_blank"
               className="text-white underline"
