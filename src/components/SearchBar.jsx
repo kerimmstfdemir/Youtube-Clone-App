@@ -27,7 +27,7 @@ const SearchBar = () => {
         <img className="w-20" src={youtubeIcon} alt="youtube-icon" />
         <p className="text-2xl"> <b>YouTube</b> Clone</p>
       </div>
-      <form className="m-2 ml-20 mr-20 w-[30rem] md:w-[40rem] ">
+      <form className="m-2 ml-20 mr-20 w-[30rem] md:w-[45rem] sm:w-[38rem]">
         <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
