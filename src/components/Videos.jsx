@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 
 const Videos = () => {
     const { searchInput, videos } = useSelector((state) => state.videoSlice)
-    console.log(videos)
     return (
         <div className='flex flex-row justify-center flex-wrap gap-4 mt-6'>
             {videos?.items?.map((item) => {

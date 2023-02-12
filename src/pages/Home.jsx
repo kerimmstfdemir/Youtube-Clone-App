@@ -11,7 +11,6 @@ const Home = () => {
     const getYoutubeVideos = async () => {
         try{
             const {data} = await youtubeApi.get(`/videos?chart=mostPopular`)
-            console.log(data)
             dispatch(getVideos(data))
         }catch(error){
             console.log(error.message)
